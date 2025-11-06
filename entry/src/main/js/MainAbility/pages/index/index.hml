@@ -1,0 +1,47 @@
+<div class="container">
+
+    <div class="main-screen" if="{{currentScreen === 'incoming'}}">
+        <text class="caller-name">Mehmet Algül</text>
+        <text class="caller-number">05313442789</text>
+
+        <div class="button-container">
+            <div class="decline-btn" onclick="declineClick">
+                <image src="../../common/callDecline.png" class="button-icon"></image>
+            </div>
+            <div class="accept-btn" onclick="acceptClick">
+                <image src="../../common/callAccept.png" class="button-icon"></image>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-screen" if="{{currentScreen === 'accept'}}">
+        <text class="caller-name">Mehmet Algül</text>
+        <text class="caller-number">05313442789</text>
+        <text class="call-timer">{{callTimer}}</text>
+
+        <div class="button-container">
+            <div class="mic-btn">
+                <image src="../../common/microphone.png" class="button-icon"></image>
+            </div>
+            <div class="close-btn" onclick="endClick">
+                <image src="../../common/callClose.png" class="button-icon"></image>
+            </div>
+            <div class="speaker-btn">
+                <image src="../../common/speaker.png" class="button-icon"></image>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-screen" if="{{currentScreen === 'decline'}}">
+        <text class="caller-name">Mehmet Algül</text>
+        <text class="call-declined">Call Declined</text>
+    </div>
+
+    <div class="main-screen" if="{{currentScreen === 'end'}}">
+        <text class="caller-name">Mehmet Algül</text>
+        <text class="call-ended">Call Ended</text>
+        <text class="call-timer">{{callTimer}}</text>
+
+    </div>
+
+</div>
