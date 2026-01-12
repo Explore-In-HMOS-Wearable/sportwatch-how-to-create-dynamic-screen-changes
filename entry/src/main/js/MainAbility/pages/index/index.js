@@ -56,9 +56,9 @@ export default {
     formatTimer() {
         const minutes = Math.floor(this.seconds / 60);
         const secs = this.seconds % 60;
-        this.callTimer =
-            (minutes < 10 ? '0' + minutes : minutes) + ':' +
-                (secs < 10 ? '0' + secs : secs);
+        const formattedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
+        const formattedSeconds = secs < 10 ? `0${secs}` : `${secs}`;
+        this.callTimer = `${formattedMinutes}:${formattedSeconds}`;
     },
 
     startVibration() {
@@ -66,22 +66,22 @@ export default {
         vibrator.vibrate({
             mode: 'short',
             success() {
-                console.log('success to vibrate');
+                // Implement the Success Operations
             },
             fail(data, code) {
-                console.log(`handle fail, data = ${data}, code = ${code}`);
-            },
+                // Implement the Fail Operations
+            }
         });
 
         this.vibrationInterval = setInterval(() => {
             vibrator.vibrate({
                 mode: 'short',
                 success() {
-                    console.log('success to vibrate');
+                    // Implement the Success Operations
                 },
                 fail(data, code) {
-                    console.log(`handle fail, data = ${data}, code = ${code}`);
-                },
+                    // Implement the Fail Operations
+                }
             });
         }, 2000);
     },
@@ -91,12 +91,12 @@ export default {
             clearInterval(this.vibrationInterval);
             this.vibrationInterval = null;
             vibrator.vibrate({
-                mode: "none",
+                mode: 'none',
                 success: function() {
-                    console.log('Vibration stopped');
+                    // Implement the Success Operations
                 },
                 fail: function(err) {
-                    console.log('Vibration stop error: ' + err);
+                    // Implement the Fail Operations
                 }
             });
         }

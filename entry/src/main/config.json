@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.hmosdemos.fakecalllite",
+    "bundleName": "com.hmosdemos.lite_wearable.howto_create_dynamic_screen_changes",
     "vendor": "hmosdemos",
     "version": {
       "code": 1000000,
